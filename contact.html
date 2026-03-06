@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Mijn Website</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">Mijn Portfolio</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="overmij.html">Over mij</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="contact.html">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <h1 class="mb-4 text-center">Contact opnemen</h1>
+                    <p class="text-center text-muted mb-4">Heb je een vraag of wil je gewoon even hoi zeggen? Vul dan
+                        het formulier hieronder in.</p>
+
+                    <form id="contactForm">
+                        <div class="mb-3">
+                            <label for="naam" class="form-label">Naam</label>
+                            <input type="text" class="form-control" id="naam" placeholder="Jouw naam" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">E-mail</label>
+                            <input type="email" class="form-control" id="email" placeholder="naam@voorbeeld.com"
+                                required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="bericht" class="form-label">Bericht</label>
+                            <textarea class="form-control" id="bericht" rows="4" placeholder="Wat wil je kwijt?"
+                                required></textarea>
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary btn-lg">Verstuur bericht</button>
+                        </div>
+                    </form>
+                    <div id="successMessage" class="alert alert-success mt-3" role="alert" style="display: none;">
+                        Dank je wel voor je bericht! Ik zal je zo snel mogelijk terug schrijven.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2026 Mijn Website. Alle rechten voorbehouden.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Form wordt als geldig beschouwd
+            this.style.display = 'none';
+            document.getElementById('successMessage').style.display = 'block';
+
+            // Reset formulier
+            this.reset();
+
+            // Formulier weer zichtbaar na 5 seconden
+            setTimeout(() => {
+                document.getElementById('contactForm').style.display = 'block';
+                document.getElementById('successMessage').style.display = 'none';
+            }, 5000);
+        });
+    </script>
+</body>
+
+</html>

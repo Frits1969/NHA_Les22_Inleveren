@@ -1,0 +1,43 @@
+body {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+footer {
+    height: 200px;
+    background-color: #f8f9fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid #dee2e6;
+}
+
+.btn-primary {
+    background-color: #2c3e50;
+    /* Eigen kleur in plaats van de standaard Bootstrap blauw */
+    border-color: #2c3e50;
+}
+
+/* Navbar achtergrond en schaduw */
+.navbar {
+    background: #1f1f1f !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Links */
+.navbar .nav-link {
+    font-weight: 500;
+    padding: 0.75rem 1rem;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.navbar .nav-link:hover {
+    color: #0dcdfd;
+    transform: translateY(-2px);
+}
+
+/* Actieve link */
+.navbar .nav-link.active {
+    color: #fd4d0d !important;
+    font-weight: 600;
+}
